@@ -2,6 +2,8 @@ name: tests
 
 on:
   push:
+    branches:
+      - ftBuild
     tags-ignore:
       - '**'
     paths-ignore:
@@ -19,7 +21,6 @@ env:
 jobs:
   tests:
     name: Test
-    if: github.repository_owner == 'explosion'
     strategy:
       fail-fast: false
       matrix:
